@@ -1,0 +1,24 @@
+---
+import Neon from './Neon.astro';
+
+interface Props {
+	names: Array<string>;
+}
+
+const { names } = Astro.props;
+---
+
+<ul class="team-list">
+  { names.map((name) => <li><b><Neon>{name}</Neon></b></li>) }
+</ul>
+
+<style>
+  .team-list ul, .team-list li {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .team-list li {
+    font-size: 3rem;
+  }
+</style>

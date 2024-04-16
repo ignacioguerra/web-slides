@@ -1,0 +1,192 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+import SampleCode from "../components/SampleCode.astro";
+import SampleCodeTab from "../components/SampleCodeTab.astro";
+---
+
+<Layout title="Sintaxis HTML5 | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="Sintaxis HTML5" />
+		<Slide title="HTML: estructura del documento">
+			<img src="/img/fe-tecs.png" alt="">
+		</Slide>
+		<Slide title="Organización de archivos: Directorio raíz o root">
+			<img src="/img/root-directory.png" alt="">
+			<p slot="footer"><a href="https://htmlandcssguidebook.com/html/file-structure/" target="_blank">https://htmlandcssguidebook.com/html/file-structure/</a></p>
+		</Slide>
+		<Slide title="Organización de archivos: Index, la página principal">
+			<img src="/img/index-file.png" alt="">
+			<p slot="footer"><a href="https://htmlandcssguidebook.com/html/file-structure/" target="_blank">https://htmlandcssguidebook.com/html/file-structure/</a></p>
+		</Slide>
+		<Slide>
+			<p>https://mi-proyecto.web.app<b>/index.html</b></p>
+			<p>https://mi-proyecto.web.app<b>/</b></p>
+		</Slide>
+		<Slide title="Organización de archivos: Subcarpetas">
+			<img src="/img/subfolder.png" alt="">
+			<p slot="footer"><a href="https://htmlandcssguidebook.com/html/file-structure/" target="_blank">https://htmlandcssguidebook.com/html/file-structure/</a></p>
+		</Slide>
+		<Slide>
+			<p>https://mi-proyecto.web.app<b>/subfolder/portada.jpg</b></p>
+			<p>https://mi-proyecto.web.app<b>/subfolder/</b><i>index.html</i></p>
+		</Slide>
+		<!-- https://pinetools.com/syntax-highlighter (Paraiso Dark) -->
+		<Slide title="Sintaxis HTML">
+			<SampleCode language="HTML">
+				<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Párrafo con <span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">a</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">href</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"https://my-project.web.app/"</span>&gt;</span>un link<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">a</span>&gt;</span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">Etiquetas (<code>p</code>, <code>a</code>). Atributo (<code>href</code>). Valor del atributo (<code>https://my-project.web.app/</code>). Contenido del párrafo. Texto del link.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span class="unmuted" style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+
+				<!-- <pre class="hljs muted" style="display: block; overflow-x: auto; background: rgb(47, 30, 46); color: rgb(163, 158, 155); padding: 0.5em;"><span class="hljs-meta unmuted" style="color: rgb(239, 97, 85);">&lt;!DOCTYPE html&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string" style="color: rgb(72, 182, 133);">"es"</span>&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">head</span>&gt;</span>
+				<span class="tab"></span><span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string" style="color: rgb(72, 182, 133);">"UTF-8"</span>&gt;</span>
+				<span class="tab"></span><span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string" style="color: rgb(72, 182, 133);">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string" style="color: rgb(72, 182, 133);">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<span class="tab"></span><span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">title</span>&gt;</span><span>Título del documento</span><span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;/<span class="hljs-name" style="color: rgb(239, 97, 85);">title</span>&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;/<span class="hljs-name" style="color: rgb(239, 97, 85);">head</span>&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;<span class="hljs-name" style="color: rgb(239, 97, 85);">body</span>&gt;</span>
+				<span class="tab"></span><span class="hljs-comment" style="color: rgb(141, 134, 135);">&lt;!-- contenido del sitio --&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;/<span class="hljs-name" style="color: rgb(239, 97, 85);">body</span>&gt;</span>
+				<span class="hljs-tag" style="color: rgb(239, 97, 85);">&lt;/<span class="hljs-name" style="color: rgb(239, 97, 85);">html</span>&gt;</span></pre> -->
+			</SampleCode>
+			<p slot="footer">Declaración del tipo de documento. No lleva etiqueta de cierre. Para HTML5 usamos lo que muestra este ejemplo.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer"><b>La etiqueta <code>html</code> engloba todo el documento</b>. </p>
+			<p slot="footer">Importante definir el atributo <code>lang</code>, que indica el idioma principal del documento. Ej.: "en" para inglés, "es" para español. El <code>lang</code> se puede usar también en otras etiquetas para indicar porciones de contenido en un idioma diferente.</p>
+			<p slot="footer">Para ciertos idiomas se puede usar el atributo <code>dir</code>. Es la dirección de lectura. Valores: "ltr" (left to right) o "rtl" (right to left).</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">El <code>head</code> contiene metadatos del documento. En general es información que no se muestra.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">Es importante incluir una etiqueta <code>meta</code> con el atributo <code>charset</code> definido; esto corresponde al set de caracteres utilizado en el documento. <code>UTF-8</code> (unicode) es un set extenso que contiene la mayoría de los símbolos y caracteres utilizados en el mundo.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">El <code>meta</code> con el atributo <code>viewport</code> así definido es para que el sitio ajuste su tamaño en diversos dispositivos de manera conveniente y uniforme.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span class="unmuted"><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">El <code>title</code> es el título del documento. Los navegadores suelen mostrarlo en la barra superior o en la pestaña.</p>
+		</Slide>
+		<Slide title="Esqueleto de un documento HTML">
+			<SampleCode language="HTML">
+				<pre class="muted" style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">&lt;!DOCTYPE <span style="color: rgb(255, 123, 114); font-weight: 400;">html</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">lang</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"es"</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">charset</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"UTF-8"</span>&gt;</span>
+				<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">meta</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">name</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"viewport"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">content</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+				<SampleCodeTab /><span><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span>Título del documento<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">title</span>&gt;</span></span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">head</span>&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<SampleCodeTab /><span class="unmuted" style="color: rgb(139, 148, 158); font-weight: 400;">&lt;!-- contenido del sitio --&gt;</span>
+				<span class="unmuted" style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">body</span>&gt;</span>
+				<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">html</span>&gt;</span></pre>
+			</SampleCode>
+			<p slot="footer">En el <code>body</code> va todo el contenido del documento. Es lo que se muestra finalmente en los navegadores.</p>
+			<p slot="footer">Nota: En este ejemplo no hay contenido. Las etiquetas <code>&lt;!--</code> y <code>--&gt;</code> delimitan comentarios en HTML.</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

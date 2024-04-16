@@ -1,0 +1,130 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+---
+
+<Layout title="Desarrollo del estándar HTML | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="HTML" description="HyperText Markup Language" />
+		<Slide>
+			<p>Desarrollo del estándar <b><Neon>HTML</Neon></b></p>
+		</Slide>
+		<Slide title="1991">
+			<p class="small"><b><Neon>Tim Berners-Lee</Neon></b> (CERN) crea HTML (junto a otras tecnologías como las URL y el HTTP, TCP/IP, etc.) No crea los lenguajes de marcado, pero inventa un nuevo estándar.</p>
+		</Slide>
+		<Slide title="1991 - Primer sitio web">
+			<img src="/img/the-worlds-first-website-1991.png" alt="">
+			<p slot="footer"><a href="http://info.cern.ch/hypertext/WWW/TheProject.html" target="_blank">http://info.cern.ch/hypertext/WWW/TheProject.html</a></p>
+		</Slide>
+		<Slide title="1992">
+			<p class="small">Primeros <Neon>navegadores</Neon> gráficos: <b>ViolaWWW</b> y <b>Mosaic</b>.</p>
+		</Slide>
+		<Slide title="1992 - Mosaic">
+			<img src="/img/mosaic_1992.jpg" alt="">
+		</Slide>
+		<Slide>
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/t-S6edOhPUw?si=gae-_k9lnIDf-UJW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+			<p slot="footer">La guerra de navegadores</p>
+		</Slide>
+		<Slide title="1994">
+			<p class="small">Primera especificación oficial por la IETF (Internet Engineering Task Force): <b>HTML 2.0</b>. Muchas de sus características estaban basadas en implementaciones ya existentes, como el tag <b>&lt;img&gt;</b>.</p>
+			<p class="small">Posteriormente el rol de la IETF pasa a manos de la <b><Neon>Word Wide Web Consortium (W3C)</Neon></b>, que publica sucesivas versiones de HTML.</p>
+		</Slide>
+		<Slide title="1994">
+			<p class="small"><b>HÃ¥kon Wium Lie</b> propone la priera idea de <Neon>CSS</Neon>.</p>
+		</Slide>
+		<Slide title="1995 - Apple">
+			<img src="/img/apple-1995.png" alt="">
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/apple-in-1995" target="_blank">https://www.webdesignmuseum.org/gallery/apple-in-1995</a></p>
+		</Slide>
+		<Slide title="1996 - Lego">
+			<img src="/img/lego-1996.png" alt="">
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/lego-1996" target="_blank">https://www.webdesignmuseum.org/gallery/lego-1996</a></p>
+		</Slide>
+		<Slide title="1996 - Nintendo">
+			<img src="/img/nintendo-1996.png" alt="">
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/nintendo-1996" target="_blank">https://www.webdesignmuseum.org/gallery/nintendo-1996</a></p>
+		</Slide>
+		<Slide title="1996 - Space Jam">
+			<img src="/img/space-jam-1996.png" alt="">
+			<p slot="footer"><a href="https://www.spacejam.com/1996/" target="_blank">https://www.spacejam.com/1996/</a></p>
+		</Slide>
+		<Slide title="1996">
+			<p class="small">Se lanza la <b>primera versión de <Neon>CSS</Neon>.</b></p>
+		</Slide>
+		<Slide title="1998">
+			<p class="small">La <b><Neon>W3C</Neon></b> decide no continuar desarrollando el estándar HTML. El nuevo horizonte es el <b>XML</b>: obliga a los desarrolladores a pensar en un código válido y bien estructurado.</p>
+		</Slide>
+		<Slide title="1998">
+			<p class="small">Se lanza <b><Neon>CSS2</Neon></b> y comienza a desarrollarse <Neon>CSS3</Neon>, con un nuevo enfoque modular que le permite ser extendido y refinado a futuro.</p>
+		</Slide>
+		<Slide title="1999">
+			<p><b><Neon>HTML 4.01</Neon></b>, última versión desarrollada.</p>
+		</Slide>
+		<Slide title="2000">
+			<p class="small">La W3C lanza su nuevo estándar: <b><Neon>XHTML 1.0 (Extensible Hypertext Markup Language)</Neon></b>.</p>
+			<p class="small">Igual al HTML 4, pero con documentos de tipo XML: se debe respetar esa sintaxis, las reglas del leguaje son estrictas. La sintaxis estricta es vista como la mejro práctica de marcado.</p>
+			<p class="small">Su publicación coincide con el crecimiento del soporte para CSS.</p>
+		</Slide>
+		<Slide title="2000 - Apple">
+			<img src="/img/apple-2000.png" alt="">
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/apple-2000" target="_blank">https://www.webdesignmuseum.org/gallery/apple-2000</a></p>
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/lego-2000" target="_blank">https://www.webdesignmuseum.org/gallery/lego-2000</a></p>
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/gallery/nintendo-2001" target="_blank">https://www.webdesignmuseum.org/gallery/nintendo-2001</a></p>
+		</Slide>
+		<Slide title="2000">
+			<p class="small">Además comienza a desarrollarse el nuevo estándar <b>XHTML 2.0</b> que a diferencia del 1, <Neon>no es retrocompatible</Neon>.</p>
+		</Slide>
+		<Slide title="2004">
+			<p class="small">Un pequeño grupo perteneciente a Opera no estaba convencido de que el futuro del desarrollo web sea XML. Comenzaron a trabajar por su parte en una extensión de los formularios HTML que no rompa las páginas preexistentes. (Lo que eventualmente se convirtio en <b>Web Forms 2.0</b>, y fue añadido a la especificación <b><Neon>HTML5</Neon></b>).</p>
+		</Slide>
+		<Slide title="2004">
+			<p class="small">A este grupo liderado por <b>Ian Hickson</b> rápidamente se le incorporaron representantes de Mozilla Foundation y Apple y formaron el <b>WHATWG (Web Hypertext Application Technology Working Group)</b>. Hickson se va a Google pero sigue trabajando en el desarrollo de <b>HTML5</b> (que en ese momento se llamaba <b><Neon>Web Applications 1.0</Neon></b>).</p>
+		</Slide>
+		<Slide title="2004">
+			<p class="small">Los elementos estructurales de HTML5 derivan de un relevamiento realizado por Hickson sobre 1 billon de páginas indexadas por Google. Fijándose en los elementos "reales" sobre los que la web estaba construida.</p>
+			<p class="small"><b><Neon>HTML5 refleja la web tal como estaba programada</Neon></b>: los tags estan inspirados en los nombres de clase e id más usados.</p>
+		</Slide>
+		<Slide title="2006">
+			<p class="small"><b>W3C</b> reconocen que fueron demasiado optimistas al esperar que el mundo se pase a XML. Y se interesan en participar en el desarrollo de <b><Neon>HTML5</Neon></b>.</p>
+		</Slide>
+		<Slide title="2007">
+			<p class="small">Adoptan las especificaciones de <b>Web Applications</b> para una nueva versión de <b>HTML</b>. Las dos organizaciones simultaneamente desarrollaban el <Neon>mismo estándar</Neon>.</p>
+		</Slide>
+		<Slide title="2007">
+			<p class="small"><b>WHATWG</b> implementó una lista de mails a la que cualquiera podía suscribirse y hacer sus aportes, pero la decisión final estaba en manos del editor. Sin embargo, corría por cuenta de <Neon>los navegadores</Neon> implementarlas o no, si un navegador decidía no hacerlo se descartaba.</p>
+		</Slide>
+		<Slide title="2009">
+			<p>W3C deja de desarrollar el XHTML 2.0. <b><Neon>Primer borrador final de HTML5.</Neon></b></p>
+		</Slide>
+		<Slide title="2011">
+			<p class="small">Los grupos llegan a la conclusión de que tienen metas diferentes: <b>W3C</b> quiere publicar una versión final de HTML5, mientras que <b>WHATWG</b> quiere continuar trabajando en <Neon>un estandar HTML "vivo"</Neon>.</p>
+		</Slide>
+		<Cover title="Principios de HTML5" />
+		<Slide title="Principios de HTML5">
+			<p class="small"><b><Neon>No romper las páginas web existentes.</Neon></b></p>
+			<p class="small">Documentar e incorporar las implementaciones que los navegadores fueron presentando de forma independiente. Definir cómo deberían lidiar los navegadores con marcado inválido.</p>
+		</Slide>
+		<Slide title="Principios de HTML5">
+			<p class="small"><b>Orientado a <Neon>Web Applications.</Neon></b></p>
+			<p class="small">Muchos sitios web se los puede denominar aplicaciones web, es decir replicas de aplicaciones de escritorio online: editores de texto o imagenes, mapas, etc. Estas características están fuertemente potenciadas por JavaScript. HTLM5 incorpora nuevas DOM APIs como: drag and drop, server-sent events, drawing, video, etc. La importancia de esto estiba en buena medida en la necesidad de un estándar abierto (gratuito para usar e implementar) que compita con estandares propietarios como Flash o Silverlight.</p>
+		</Slide>
+		<Slide title="Principios de HTML5">
+			<p class="small"><b><Neon>Retrocompatibilidad</Neon>: No romper la Web.</b></p>
+			<p class="small">A pesar de que HTML5 haya descartado etiquetas de HTML4, debe definir cómo lidiar con los sitios que aún las utilicen.</p>
+		</Slide>
+		<Slide title="Links">
+			<p slot="footer"><a href="https://www.webdesignmuseum.org/early-websites" target="_blank">Web Design Museum</a></p>
+			<p slot="footer"><a href="https://neal.fun/internet-artifacts/" target="_blank">Internet Artifacts</a></p>
+			<p slot="footer"><a href="https://www.w3.org/History.html" target="_blank">A Little History of the World Wide Web</a> (W3C)</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

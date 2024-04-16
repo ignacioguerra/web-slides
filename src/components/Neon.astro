@@ -1,0 +1,58 @@
+---
+
+---
+<style is:global>
+	@keyframes blink-alt {
+		0% { opacity: .5; filter: blur(3px); }
+		60% { opacity: .5; }
+		80% { opacity: 1; }
+	}
+	
+	thm-neon {
+		display: inline;
+		animation: blink-alt 250ms linear;
+		animation-iteration-count: 2;
+	}
+	
+	thm-neon > span {
+		animation: blink-alt 220ms linear;
+		animation-iteration-count: 3;
+	}
+	
+	thm-neon > span > span {
+		animation: blink-alt 290ms linear;
+		animation-iteration-count: 2;
+	}
+	
+	thm-neon > span:nth-child(2n+0),
+	thm-neon > span:nth-child(2n+0) > span {
+		animation-delay: -120ms;
+	}
+</style>
+<script>
+	class Neon extends HTMLElement {
+		constructor() {
+			super()
+			const words = this.textContent.split(' ').map((word) => this._formatWord(word))
+			this.innerHTML = words.join(' ')
+		}
+		_formatWord(word) {
+			const mainDelimiter = this._createDelimiter(word)
+			const subDelimiter = this._createDelimiter(mainDelimiter)
+			const mainPlanParts = word.split(mainDelimiter)
+			const subPlainParts = mainDelimiter.split(subDelimiter)
+			const mainJoiner = subPlainParts.join(`<span>${subDelimiter}</span>`)
+			const htmlWordResult = mainPlanParts.join(`<span>${mainJoiner}</span>`)
+			return htmlWordResult
+		}
+		_createDelimiter(plainText) {
+			const textLength = plainText.length
+			const delimiterStartIndex = Math.round(Math.random() * Math.max(0, textLength - 2))
+			const delimiterCharCount = Math.min(Math.round(2 + Math.random() * 3), textLength - delimiterStartIndex)
+			return plainText.substring(delimiterStartIndex, delimiterCharCount)
+		}
+	}
+
+	customElements.define("thm-neon", Neon);
+</script>
+<thm-neon><slot/></thm-neon>

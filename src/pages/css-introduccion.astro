@@ -1,0 +1,203 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+import SampleCode from "../components/SampleCode.astro";
+import SampleCodeTab from "../components/SampleCodeTab.astro";
+import SampleCodeBrackets from "../components/SampleCodeBrackets.astro";
+import SampleCodeColumns from "../components/SampleCodeColumns.astro";
+import EmbedCodepen from "../components/EmbedCodepen.astro";
+---
+<style>
+	.columns {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		gap: 45px;
+	}
+	.columns figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	.columns img {
+		flex: 1;
+		display: block;
+		width: max-content;
+		height: 100%;
+	}
+	.modelo-caja {
+		flex: 1;
+		text-align: left;
+		padding: 2rem;
+	}
+	.modelo-caja p {
+		border: 1px solid rgba(255,0,0,.75);
+	}
+	.modelo-caja strong {
+		border: 1px solid rgba(0,255,0,.75);
+	}
+</style>
+<Layout title="Introducción a CSS | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="Introducción a CSS" description="Hojas de estilo en cascada (Cascading Style Sheets)" />
+		<Slide title="CSS: solución al problema de mezclar diseño con semántica">
+			<img src="/img/fe-tecs.png" alt="">
+		</Slide>
+		<Slide>
+			<div class="columns">
+				<figure>
+					<img src="/img/hetfield-css.jpg" alt="">
+					<figcaption>
+						<p class="small">Hetfield con CSS</p>
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; ">hetfield.html + metallica.css</pre>
+					</figcaption>
+				</figure>
+				<figure>
+					<img src="/img/hetfield-html.jpg" alt="">
+					<figcaption>
+						<p class="small">Hetfield sin CSS</p>
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; ">hetfield.html</pre>
+					</figcaption>
+				</figure>
+			</div>
+		</Slide>
+		{/* https://highlight.hohli.com/?theme=github-dark&language=css&numbers= */}
+		<Slide title="Sintaxis CSS">
+			<SampleCode language="CSS">
+				<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: red; <span style="color: rgb(121, 192, 255); font-weight: 400;">font-size</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">12px</span>; </SampleCodeBrackets></pre>
+			</SampleCode>
+			<p slot="footer">Ejemeplo de regla CSS. Selector + bloque de declaraciones. Propiedad/valor.</p>
+		</Slide>
+		<Slide title="Selectores CSS básicos">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: blue;
+					</SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">.destacado</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">font-size</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">18px</span>;
+					</SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">#autor</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">font-weight</span>: bold;
+					</SampleCodeBrackets></pre>
+				</SampleCode>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Hola qué tal<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+						<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"destacado"</span>&gt;</span>¡Ey!<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+						<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">id</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"autor"</span>&gt;</span>Juan Carlos<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+					</pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="CSS - Cascada">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: blue;
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: red;
+					</SampleCodeBrackets></pre>
+				</SampleCode>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Hola qué tal<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span></pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="CSS - Cascada">
+			<EmbedCodepen codepenId="RwOggZL" tab="css" />
+		</Slide>
+		<Slide title="CSS - Herencia">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">body</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: blue;
+					</SampleCodeBrackets></pre>
+				</SampleCode>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Hola qué tal<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span></pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="CSS - Herencia">
+			<EmbedCodepen codepenId="VwNWWbp" tab="css" />
+		</Slide>
+		<Slide title="CSS - Especificidad">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">article</span> <span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: red;
+					</SampleCodeBrackets>
+					<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: green;
+					</SampleCodeBrackets></pre>
+				</SampleCode>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; ">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span>&gt;
+					<SampleCodeTab />&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;Hola qué tal&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;
+					&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span>&gt;</pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="CSS - Especificidad">
+			<EmbedCodepen codepenId="QWPgMLe" tab="css" />
+		</Slide>
+		<Slide title="CSS - Especificidad">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: red; </SampleCodeBrackets>
+					<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span> <span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: green; </SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">.destacado</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: blue; </SampleCodeBrackets>
+					<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span><span style="color: rgb(121, 192, 255); font-weight: 400;">.destacado</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: yellow; </SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">#principal</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: cyan; </SampleCodeBrackets>
+					<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">.destacado</span> <SampleCodeBrackets> <span style="color: rgb(121, 192, 255); font-weight: 400;">color</span>: black; </SampleCodeBrackets></pre>
+				</SampleCode>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span>&gt;</span>
+					<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>
+					<SampleCodeTab /><SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"destacado"</span>
+					<SampleCodeTab /><SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">id</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"principal"</span>
+					<SampleCodeTab />&gt;</span>
+					<SampleCodeTab /><SampleCodeTab />Hola qué tal
+					<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+					<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">article</span>&gt;</span></pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="CSS - Especificidad">
+			<EmbedCodepen codepenId="KKYqvmV" tab="css" />
+			<p slot="footer">La especificidad de cada regla se mide mediante la suma de selectores.</p>
+			<p slot="footer">Selector de tag vale 1. Selector de clase vale 10. Selector de id vale 100.</p>
+		</Slide>
+		<Slide title="CSS - Modelo de caja">
+			<SampleCodeColumns>
+				<SampleCode language="HTML">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Un párrafo con <span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">strong</span>&gt;</span>algunas palabras<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">strong</span>&gt;</span> resaltadas.<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+					<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Otro párrafo.<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span></pre>
+				</SampleCode>
+				<div class="modelo-caja">
+					<p>Un párrafo con <strong>algunas palabras</strong> resaltadas.</p>
+					<p>Otro párrafo.</p>
+				</div>
+			</SampleCodeColumns>
+			<p slot="footer">Los elementos del documento se representan mediante "cajas" rectangulares.</p>
+		</Slide>
+		<Slide title="CSS - Modelo de caja">
+			<img src="/img/modelo-de-caja.gif" alt="">
+			<p slot="footer">Propiedades que componen cada caja. Border, padding y margin tienen "peso". Es decir, desplazan el contenido y afectan el ancho total que ocupa la caja. Esto se puede alterar con la propiedad <code>box-sizing</code> de CSS3.</p>
+		</Slide>
+		<Slide title="Links">
+			<p slot="footer"><a href="https://uniwebsidad.com/libros/css" target="_blank">Introducción a CSS</a> (Uniwebsidad)</p>
+			<p slot="footer"><a href="https://uniwebsidad.com/libros/css-avanzado" target="_blank">CSS Avanzado</a> (Uniwebsidad)</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

@@ -1,0 +1,48 @@
+---
+interface Props {
+	language?: string;
+}
+
+const { language } = Astro.props;
+---
+<style>
+  .sample-code {
+    position: relative;
+    padding: 0.5rem 0;
+  }
+  .sample-code :global(pre) {
+    font-size: 1.5rem;
+    text-align: left;
+    white-space: pre-line;
+    border: 1px solid rgba(255,255,255,.25);
+    padding: 1rem 2rem;
+    border-radius: 8px;
+    margin: 0;
+  }
+  .sample-code :global(.tab) {
+    white-space: pre;
+  }
+  .sample-code :global(.tab)::before {
+    content: "  ";
+  }
+  .sample-code :global(.muted > span) {
+    opacity: .35;
+  }
+  .sample-code :global(.muted > .unmuted) {
+    opacity: 1;
+  }
+  .sample-code .sample-code__language {
+    position: absolute;
+    font-size: 0.625rem;
+    color: #011219;
+    background-color: #efffde;
+    padding: 0 0.375rem;
+    border-radius: 3px;
+    right: -0.25rem;
+    top: 0;
+  }
+</style>
+<div class="sample-code">
+  { language && <p class="sample-code__language">{ language }</p>}
+  <slot />
+</div>

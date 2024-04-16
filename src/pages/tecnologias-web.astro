@@ -1,0 +1,30 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+---
+
+<Layout title="¿Cómo funciona Internet? | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="¿Cómo funciona Internet?" />
+		<Slide title="Cómo funciona Internet">
+			<img src="/img/como-funciona-internet.jpg" alt="">
+		</Slide>
+		<Slide title="Cómo funciona Internet">
+			<img src="/img/fe-tecs.png" alt="">
+		</Slide>
+		<Slide title="Cómo funciona Internet">
+			<img src="/img/url.png" alt="">
+		</Slide>
+		<Slide>
+			<p>https://<b>mi-proyecto.web.app</b>/carpeta/portada.jpg</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

@@ -1,0 +1,451 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+import SampleCode from "../components/SampleCode.astro";
+import SampleCodeTab from "../components/SampleCodeTab.astro";
+import SampleCodeBrackets from "../components/SampleCodeBrackets.astro";
+import SampleCodeColumns from "../components/SampleCodeColumns.astro";
+import EmbedCodepen from "../components/EmbedCodepen.astro";
+---
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Roboto:wght@300;400;500;700&display=swap');
+
+	.columns {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		gap: 45px;
+	}
+	.columns figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	.columns img {
+		flex: 1;
+		display: block;
+		width: max-content;
+		height: 100%;
+	}
+	.modelo-caja {
+		flex: 1;
+		text-align: left;
+		padding: 2rem;
+	}
+	.modelo-caja p {
+		border: 1px solid rgba(255,0,0,.75);
+	}
+	.modelo-caja strong {
+		border: 1px solid rgba(0,255,0,.75);
+	}
+
+	.mayus {
+		text-transform: uppercase;
+	}
+
+	.text-box {
+		font-family: "Roboto", sans-serif;
+		font-optical-sizing: auto;
+		font-weight: 400;
+		font-style: normal;
+		border: 1px solid #efffde;
+		border-radius: 32px;
+		padding: 60px 100px;
+		max-width: 1200px;
+		color: white;
+		line-height: 1.5;
+		will-change: transform;
+	}
+	.text-box .text-box__subheading {
+		font-size: 22px;
+	}
+	.text-box .text-box__heading {
+		font-size: 42px;
+		font-weight: 700;
+	}
+	.text-box .text-box__paragraph {
+		font-size: 16px;
+		margin: 20px 0;
+		line-height: 1.2;
+	}
+	.text-box .text-box__cta {
+		font-size: 18px;
+		display: inline-block;
+		border-radius: 32px;
+		color: black;
+		background-color: white;
+		padding: 8px 32px;
+		text-decoration: none;
+		font-weight: 500;
+	}
+
+	.text-box--phase-02 .text-box__heading {
+		line-height: 1.2;
+		animation: line-height-1 500ms ease-in-out;
+	}
+	.text-box--phase-02 .text-box__paragraph {
+		line-height: 1.5;
+		animation: line-height-2 1200ms ease-in-out;
+	}
+	@keyframes line-height-1 {
+		from { line-height: 1.5; }
+		to { line-height: 1.2; }
+	}
+	@keyframes line-height-2 {
+		0%,50% { line-height: 1.2; }
+		to { line-height: 1.5; }
+	}
+
+	.text-box--phase-03 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		animation: letter-spacing-1 800ms ease-in-out;
+	}
+	.text-box--phase-03 .text-box__paragraph {
+		line-height: 1.5;
+	}
+	@keyframes letter-spacing-1 {
+		0%, 20% { letter-spacing: 0; }
+		to { letter-spacing: -0.01em; }
+	}
+
+	.text-box--phase-04 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		animation: text-align-1 2000ms ease-in-out;
+	}
+	.text-box--phase-04 .text-box__paragraph {
+		line-height: 1.5;
+		animation: text-align-1 2000ms ease-in-out reverse;
+		animation-delay: 2000ms;
+	}
+	@keyframes text-align-1 {
+		0% { text-align: center; }
+		20% { color: white; }
+		30%, 70% { text-align: left; color: red; }
+		80% { color: white; }
+		to { text-align: center; }
+	}
+
+	.text-box--phase-05 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		text-wrap: balance;
+	}
+	.text-box--phase-05 .text-box__paragraph {
+		line-height: 1.5;
+	}
+
+	.text-box--phase-06 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		text-wrap: balance;
+	}
+	.text-box--phase-06 .text-box__paragraph {
+		line-height: 1.5;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		animation: width-1 800ms ease-in-out;
+	}
+	@keyframes width-1 {
+		0%, 20% { max-width: 100%; }
+		to { max-width: 600px; }
+	}
+
+	.text-box--phase-07 .text-box__subheading {
+		font-size: 18px;
+		font-weight: 500;
+		animation: hierarchy-1 4000ms ease-in-out;
+	}
+	.text-box--phase-07 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		text-wrap: balance;
+	}
+	.text-box--phase-07 .text-box__paragraph {
+		line-height: 1.5;
+		max-width: 600px;
+		margin-left: auto;
+		margin-right: auto;
+		font-size: 18px;
+		font-weight: 300;
+		animation: hierarchy-2 4000ms ease-in-out;
+	}
+	@keyframes hierarchy-1 {
+		0%, 10% { font-size: 20px; font-weight: 400; }
+		30% { font-size: 18px; font-weight: 400; }
+		70% { font-size: 18px; font-weight: 400; }
+		80% { font-size: 18px; font-weight: 400; }
+		to { font-size: 18px; font-weight: 500; }
+	}
+	@keyframes hierarchy-2 {
+		0%, 30% { font-size: 16px;  font-weight: 400; }
+		70% { font-size: 18px; font-weight: 400; }
+		90% { font-size: 18px; font-weight: 400; }
+		to { font-size: 18px; font-weight: 300; }
+	}
+
+	.text-box--phase-08 .text-box__subheading {
+		font-size: 18px;
+		font-weight: 500;
+		margin: 26px 0;
+		animation: margin-1 1000ms ease-in-out;
+	}
+	.text-box--phase-08 .text-box__heading {
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		text-wrap: balance;
+		margin: 26px 0;
+		animation: margin-2 1100ms ease-in-out;
+	}
+	.text-box--phase-08 .text-box__paragraph {
+		line-height: 1.5;
+		max-width: 600px;
+		font-size: 18px;
+		font-weight: 300;
+		margin: 26px auto;
+		animation: margin-3 1200ms ease-in-out;
+	}
+	.text-box--phase-08 .text-box__cta {
+		margin-top: 52px;
+		animation: margin-4 3000ms ease-in-out;
+	}
+	@keyframes margin-1 {
+		0%,15% { margin-top: 4.5px; margin-bottom: 4.5px; }
+		to { margin-top: 26px; margin-bottom: 26px; }
+	}
+	@keyframes margin-2 {
+		0%,20% { margin-top: 42px; margin-bottom: 42px; }
+		to { margin-top: 26px; margin-bottom: 26px; }
+	}
+	@keyframes margin-3 {
+		0%,25% { margin-top: 20px; margin-bottom: 20px; }
+		to { margin-top: 26px; margin-bottom: 26px; }
+	}
+	@keyframes margin-4 {
+		0%,50% { margin: 0 auto; }
+		to { margin: 52px auto 0; }
+	}
+
+	.text-box--phase-09 .text-box__subheading {
+		font-size: 18px;
+		font-weight: 500;
+		margin: 26px 0;
+	}
+	.text-box--phase-09 .text-box__heading {
+		/* font-size: 42px; */
+		line-height: 1.2;
+		letter-spacing: -0.01em;
+		margin: 26px 0;
+		text-wrap: balance;
+	}
+	.text-box--phase-09 .text-box__paragraph {
+		font-size: 18px;
+		font-weight: 300;
+		line-height: 1.5;
+		margin: 26px auto;
+		max-width: 600px;
+	}
+	.text-box--phase-09 .text-box__cta {
+		margin-top: 52px;
+	}
+</style>
+<Layout title="Tipografía | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="Tipografía" description="Estilos de texto con CSS" />
+		<Slide>
+			<img src="/img/tipografia.jpg" alt="">
+		</Slide>
+		<Slide title="font-family">
+			<img src="/img/font-family-1.webp" alt="">
+		</Slide>
+		<Slide title="font-family">
+			<img src="/img/font-family-2.gif" alt="">
+		</Slide>
+		<Slide title="font-family">
+			<img src="/img/font-family-3.webp" alt="">
+		</Slide>
+		<Slide title="font-weight">
+			<img src="/img/font-weight.jpg" alt="">
+			<p slot="footer"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/font-weight</a></p>
+		</Slide>
+		<Slide title="Web Fonts">
+			<img src="/img/google-fonts.jpg" alt="">
+			<p slot="footer"><a href="https://fonts.google.com/" target="_blank">https://fonts.google.com/</a> (Google Fonts)</p>
+			<p slot="footer"><a href="https://www.fontsquirrel.com/" target="_blank">https://www.fontsquirrel.com/</a> (FontSquirrel)</p>
+		</Slide>
+		<Slide title="Tamaño">
+			<p><b>Vamos a usar tamaños relativos</b></p>
+			<p class="small">Recomendamos el uso de rem o em.</p>
+			<p class="small">1rem es equivalente a 16px. Para convertir valores en px a rem se puede hacer: valor / 16</p>
+			<p class="small">Por ejemplo: 27/16=1,6875. Entonce 27px equivalen a 1.6875rem</p>
+			<p slot="footer"><a href="https://cybmeta.com/em-y-rem" target="_blank">https://cybmeta.com/em-y-rem</a></p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Poca cantidad de tipografías</b></p>
+			<p class="small">Optimiza la carga de la página y brinda consistencia del diseño.</p>
+			<p class="small">Consejo: aprovechar el font-weight.</p>
+			<p slot="footer">font-family, font-weight</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Que las tipografías de complementen</b></p>
+			<p class="small">Cada tipografía tiene un carácter diferente: elegante, casual, infantil, serio, moderno, futurista, etc.</p>
+			<p class="small">Elegí las que sean adecuadas a lo que querés transmitir.</p>
+			<p class="small">Google Fonts ofrece descripciones de cada tipografía.</p>
+			<p slot="footer"><a href="https://fonts.google.com/knowledge/choosing_type/pairing_typefaces_based_on_their_construction_using_the_font_matrix" target="_blank">https://fonts.google.com/knowledge/choosing_type/pairing_typefaces_based_on_their_construction_using_the_font_matrix</a></p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Tamaño de letra adecuado para web</b></p>
+			<p class="small">Tener en cuenta el tamaño de la pantalla.</p>
+			<p class="small">Se pueden seguir reglas como mantener una proporción (1.6 por ejemplo): 16px (p), 26px (h3), 42px(h2) 68px (h1)</p>
+			<p class="small">O incrementar usando valores constantes (de 8px por ejemplo): 16 px (p), 24 px (h3), 32px (h2) 40px (h1)</p>
+			<p slot="footer">font-size</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Evitar texto alineado al centro</b></p>
+			<img src="/img/text-align.jpg" alt="">
+			<p slot="footer">text-align</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Evitar texto justificado</b></p>
+			<img src="/img/texto-justificado.jpg" alt="">
+			<p slot="footer">text-align</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>No abusar de mayúsculas</b></p>
+			<p class="small mayus">Leer mucho texto en mayúsculas puede resultar molesto</p>
+			<p class="small mayus">Las tipografías están preparadas para leerse más cómodamente en minúsculas.</p>
+			<p slot="footer">text-transform</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Limitar el ancho del párrafo</b></p>
+			<p class="small">Una línea de texto muy extensa desalienta la lectura (expulsa a lxs usuarixs). La lectura se vuelve más lenta e interrumpida. Se pierde tiempo identificando la continuidad de la oración.</p>
+			<p slot="footer">width, max-width</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Cuidado con ciertas tipografías</b></p>
+			<p class="small">Una línea de texto muy extensa desalienta la lectura (expulsa a lxs usuarixs). La lectura se vuelve más lenta e interrumpida. Se pierde tiempo identificando la continuidad de la oración.</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Ajustar bien el interlineado</b></p>
+			<p class="small">Mientras más grande sea el texto, menor interlineado.</p>
+			<p class="small">Entre 1.1 y 1.3 para texto grande (h1). Entre 1.3 y 1.5 para texto chico (p).</p>
+			<img src="/img/line-height.jpg" alt="">
+			<p slot="footer">line-height</p>
+		</Slide>
+		<Slide title="Consejos">
+			<p><b>Mantener un buen contraste con el fondo</b></p>
+			<p class="small"><a href="https://coolors.co/contrast-checker">https://coolors.co/contrast-checker</a></p>
+			<p class="small"><a href="https://kevingutowski.github.io/color.html">https://kevingutowski.github.io/color.html</a></p>
+			<p class="small"><a href="https://color.adobe.com/create/color-contrast-analyzer">https://color.adobe.com/create/color-contrast-analyzer</a></p>
+			<p slot="footer">color</p>
+		</Slide>
+		<Slide title="Ejemplo práctico" fade={false}>
+			<article class="text-box text-box--phase-01">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+		</Slide>
+		<Slide title="Ejemplo práctico: line-height" fade={false}>
+			<article class="text-box text-box--phase-02">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">line-height: 1.5; (p) line-height: 1.2; (h1)</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: letter-spacing" fade={false}>
+			<article class="text-box text-box--phase-03">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">letter-spacing: -0.01em; (h1)</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: text-align" fade={false}>
+			<article class="text-box text-box--phase-04">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">Evitar text-align: center; para texto extenso.</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: Balance" fade={false}>
+			<article class="text-box text-box--phase-05">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">text-wrap: balance; (h1)</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: Ancho del párrafo" fade={false}>
+			<article class="text-box text-box--phase-06">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">Una línea óptima debe tener entre 50 y 75 caracteres. Aproximadamente son 600px de ancho para texto normal de 18px de tamaño.</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: Jerarquía" fade={false}>
+			<article class="text-box text-box--phase-07">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">No abusar de diferencia de tamaños para dar jerarquía. Usar 1 o 2 solamente, y recurrir a cambios de font-weight o color.</p>
+		</Slide>
+		<Slide title="Ejemplo práctico: Espaciado" fade={false}>
+			<article class="text-box text-box--phase-08">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+			<p slot="footer">El espaciado es bueno para establecer relaciones entre elementos: elementos más cercanos que otros.</p>
+			<p slot="footer">Elementos relacionados tienen una distancia de 1x. Elementos lejando 2x.</p>
+		</Slide>
+		<Slide title="Resultado final" fade={false}>
+			<article class="text-box text-box--phase-09">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+		</Slide>
+		<Slide title="Resultado final" fade={false}>
+			<article class="text-box text-box--phase-10">
+				<p class="text-box__subheading">Grupo de estudio</p>
+				<h1 class="text-box__heading">Programación web creativa y arte digital en el desarrollo de sitios y aplicaciones</h1>
+				<p class="text-box__paragraph">Grupo de estudio centrado en la exploración de las posibilidades técnicas y artísticas de las tecnologías web. Se trata de un espacio en el que los participantes podrán afianzar sus conocimientos a partir de prácticas concretas en el desarrollo de sitios y aplicaciones web, y mediante cursos y talleres extra-curriculares. </p>
+				<a href="#" class="text-box__cta">Conocer más</a>
+			</article>
+		</Slide>
+
+		<Slide title="Links">
+			<p slot="footer"><a href="https://fonts.google.com/knowledge/introducing_type" target="_blank">Introducing type</a> (Google Fonts)</p>
+			<p slot="footer"><a href="https://fonts.google.com/knowledge/choosing_type" target="_blank">Choosing type</a> (Google Fonts)</p>
+			<p slot="footer"><a href="https://sergioks.com/tipografias-web/" target="_blank">Tipografía Web: cómo elegirla correctamente</a></p>
+			<p slot="footer"><a href="https://www.youtube.com/watch?v=88XxC0_zs74" target="_blank">6 UI Hacks I Wish I Knew As A Beginner</a></p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

@@ -1,0 +1,25 @@
+---
+
+---
+<style>
+	.sample-code-columns {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		gap: 45px;
+    padding: 0 3rem;
+	}
+
+  .sample-code-columns :global(.sample-code) {
+    flex: 1;
+  }
+
+  .sample-code-columns :global(.sample-code pre) {
+    min-height: 100%;
+  }
+</style>
+<div class="sample-code-columns">
+  <slot />
+</div>

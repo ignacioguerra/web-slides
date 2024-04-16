@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Neon from "../components/Neon.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+import TheMenu from "../components/TheMenu.astro";
+import TeamList from "../components/TeamList.astro";
+---
+
+<Layout title="Introducción a la materia | Tecnologías Hipermediales">
+	<Slider>
+		<Cover title="Tecnologías Hipermediales" description="2024" />
+		<Slide title="Equipo docente">
+			<TeamList names={[ "Ignacio Guerra", "José Casanova", "Roy Eden" ]} />
+		</Slide>
+		<Slide>
+			<p>¿Qué esperamos de <b><Neon>Tecnologías Hipermediales</Neon></b>?</p>
+		</Slide>
+		<!-- <Slide title="Suposiciones...">
+			<p><b>Hicieron varias <Neon>obras o trabajos</Neon> y los documentaron.</b></p>
+			<p>Fotos, videos, memorias descriptiva y conceptual, etc.</p>
+		</Slide> -->
+		<Slide title="Suposiciones...">
+			<p><b>Hicieron obras o trabajos en formato <Neon>digital</Neon>.</b></p>
+		</Slide>
+		<Slide title="Suposiciones...">
+			<p><b>Saben <Neon>programar</Neon>.</b></p>
+			<p>Alguna vez programaron / están familizarizadxs con algún lenguaje de programación.</p>
+		</Slide>
+		<Slide title="Suposiciones...">
+			<p><b>Tienen conocimientos de <Neon>HTML y CSS</Neon>.</b></p>
+			<p>Conocen las técnicas básicas para crear y diseñar páginas web.</p>
+		</Slide>
+		<Cover title="Tecnologías Hipermediales" description="¿Qué son?" />
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

@@ -1,0 +1,12 @@
+---
+interface Props {
+	codepenId: string;
+  tab?:string;
+}
+
+const { codepenId, tab } = Astro.props;
+---
+<iframe height="300" style="width: 100%;" scrolling="no" 
+  src=`https://codepen.io/ignacioguerra/embed/${codepenId}?default-tab=${tab}%2Cresult&editable=true`
+  frameborder="no" loading="lazy" allowtransparency="true" allowfullscreen="true"
+></iframe>

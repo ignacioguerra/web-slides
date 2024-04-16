@@ -1,0 +1,63 @@
+---
+
+---
+
+<div class="slider">
+  <slot />
+</div>
+
+<script>
+  const slider = document.querySelector('.slider')
+  const slides = document.querySelectorAll('.slide, .cover')
+  let currentSlide = 0
+  updateActiveSlide()
+
+  document.addEventListener('keydown', (e) => {
+    if(e.key === 'ArrowLeft' && currentSlide > 0) {
+      currentSlide--
+      updateActiveSlide()
+    } else if(e.key === 'ArrowRight' && currentSlide < slides.length-1) {
+      currentSlide++
+      updateActiveSlide()
+    }
+  })
+
+  function hideActiveSlides() {
+    let activeSlide = document.querySelector('.slide.active,.cover.active')
+    if(activeSlide) {
+      activeSlide.classList.remove('active')
+    }
+  }
+
+  function updateActiveSlide() {
+    hideActiveSlides()
+    const progress = slides.length ? currentSlide / (slides.length-1) : 0
+    slider.style.setProperty('--progress', `${progress*100}%`)
+    slides[currentSlide].classList.add('active')
+  }
+</script>
+
+<style>
+  .slider {
+    height: 100%;
+    overflow: hidden;
+    padding-bottom: 5px;
+  }
+  .slider::after, .slider::before {
+    content: "";
+    display: block;
+    position: fixed;
+    width: 100%;
+    height: 3px;
+    bottom: 0;
+    left: 0;
+    background-color: #efffde;
+  }
+  .slider::before {
+    opacity: .25;
+  }
+  .slider::after {
+    transition: width 100ms ease-out;
+    width: var(--progress);
+  }
+</style>

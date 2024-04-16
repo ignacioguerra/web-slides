@@ -1,0 +1,47 @@
+---
+import Neon from './Neon.astro';
+
+interface Props {
+	title?: string;
+  description?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<article class="cover" id="historia-2">
+  { title && <h2 class="cover__title">{ title }</h2> }
+  { description && <p class="cover__content">
+    <Neon>{description}</Neon>
+  </p> }
+</article>
+
+<style>
+  .cover {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* gap: 20px; */
+    height: 100%;
+    padding: 30px 50px;
+  }
+  .cover:not(.active) {
+    display: none;
+  }
+  .cover__title {
+    font-size: 3rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0.25em 0;
+  }
+  .cover__content {
+    font-size: 2rem;
+    margin: 0.25em 0;
+  }
+  @keyframes fade-in {
+    0% { opacity: 0; }
+    10% { opacity: 0; }
+    100% { opacity: 1; }
+  }
+</style>
