@@ -2,26 +2,63 @@
 import Neon from './Neon.astro';
 ---
 
-<ul class="the-menu">
-  <li><a href="introduccion"><Neon>introducción</Neon></a></li>
-  <li><a href="tecnologias-web"><Neon>tecnologías_web</Neon></a></li>
-  <li><a href="hipertexto"><Neon>hipertexto</Neon></a></li>
-  <li><a href="html5-historia"><Neon>historia_html5</Neon></a></li>
-  <li><a href="html5-sintaxis"><Neon>sintaxis_html5</Neon></a></li>
-  <li><a href="css-introduccion"><Neon>introducción_css</Neon></a></li>
-  <li><a href="css-tipografia"><Neon>tipografía</Neon></a></li>
-</ul>
+<div class="menu-list">
+  <div class="menu-list__column">
+    <h2>Introduccion</h2>
+    <ul class="the-menu">
+      <li><a href="introduccion"><Neon>hipermediales</Neon></a></li>
+      <li><a href="introduccion"><Neon>seminarios</Neon></a></li>
+      <li><a href="tecnologias-web"><Neon>internet</Neon></a></li>
+      <li><a href="hipertexto"><Neon>hipertexto</Neon></a></li>
+    </ul>
+  </div>
+  <div class="menu-list__column">
+    <h2>HTML5</h2>
+    <ul class="the-menu">
+      <li><a href="html5-historia"><Neon>historia</Neon></a></li>
+      <li><a href="html5-sintaxis"><Neon>sintaxis</Neon></a></li>
+    </ul>
+  </div>
+  <div class="menu-list__column">
+    <h2>CSS3</h2>
+    <ul class="the-menu">
+      <li><a href="css-introduccion"><Neon>introducción</Neon></a></li>
+      <li><a href="css-tipografia"><Neon>tipografía</Neon></a></li>
+      <li><a href="css/flexbox"><Neon>flexbox</Neon></a></li>
+    </ul>
+  </div>
+  <div class="menu-list__column">
+    <h2>JS</h2>
+    <ul class="the-menu">
+      <li><a href="js-arrays"><Neon>arrays</Neon></a></li>
+      <li><a href="js-objetos"><Neon>objetos</Neon></a></li>
+    </ul>
+  </div>
+</div>
 
 <style>
-  ul, li {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-  }
-  li {
-    font-size: 2rem;
-  }
-  a {
-    color: inherit;
+  .menu-list {
+    display: flex;
+    text-align: left;
+    gap: 6rem;
+    &__column {
+      flex: 1;
+      background-color: red;
+    }
+    h2 {
+      font-size: 1.75rem;
+      margin: 0 0 1.25rem;
+    }
+    li {
+      font-size: 1.75rem;
+    }
+    ul, li {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+    a {
+      color: inherit;
+    }
   }
 </style>

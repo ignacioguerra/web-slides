@@ -1,0 +1,400 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Neon from "../../components/Neon.astro";
+import Slider from "../../components/Slider.astro";
+import Cover from "../../components/Cover.astro";
+import Slide from "../../components/Slide.astro";
+import TheMenu from "../../components/TheMenu.astro";
+import TeamList from "../../components/TeamList.astro";
+import SampleCode from "../../components/SampleCode.astro";
+import SampleCodeTab from "../../components/SampleCodeTab.astro";
+import SampleCodeBrackets from "../../components/SampleCodeBrackets.astro";
+import SampleCodeColumns from "../../components/SampleCodeColumns.astro";
+import EmbedCodepen from "../../components/EmbedCodepen.astro";
+import SampleCodeColumn from "../../components/SampleCodeColumn.astro";
+import SampleCodeResultContainer from "../../components/SampleCodeResultContainer.astro";
+import FlexboxExampleResult from "../../components/flexbox/FlexboxExampleResult.astro";
+import FlexboxExampleHtml from "../../components/flexbox/FlexboxExampleHtml.astro";
+---
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Roboto:wght@300;400;500;700&display=swap');
+
+	.columns {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		gap: 45px;
+	}
+	.columns figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	.columns img {
+		flex: 1;
+		display: block;
+		width: max-content;
+		height: 100%;
+	}
+
+	.resultado--width p {
+		font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+		width: auto;
+		border: 3px solid green;
+		margin: 0.5rem 0;
+	}
+	.resultado--width p.min {
+		width: min-content;
+	}
+	.resultado--width p.max {
+		width: max-content;
+	}
+
+</style>
+<Layout title="Flexbox">
+	<Slider>
+		<Slide title="Layout">
+			<img src="/img/pikachu_layout.png" alt="">
+		</Slide>
+		<Cover title="Flexbox" description="Caja Flexible: Modelo unidimensional de layout" />
+		<Slide title="min-content y max-content">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="HTML">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>Esto es un párrafo<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+						<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"min"</span>&gt;</span>Esto es un párrafo<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+						<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"max"</span>&gt;</span>Esto es un párrafo<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span>&gt;</span>
+						</pre>
+					</SampleCode>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(126, 231, 135); font-weight: 400;">p</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">width</span>: auto; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* valor por defecto */</span>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">border</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1px</span> solid green;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">margin</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">0.5rem</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>;
+						</SampleCodeBrackets>
+						<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span><span style="color: rgb(121, 192, 255); font-weight: 400;">.min</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">width</span>: min-content;
+						</SampleCodeBrackets>
+						<span style="color: rgb(126, 231, 135); font-weight: 400;">p</span><span style="color: rgb(121, 192, 255); font-weight: 400;">.max</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">width</span>: max-content;
+						</SampleCodeBrackets>
+						</pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<div class="resultado--width">
+						<div class="contenedor">
+							<p>Esto es un párrafo</p>
+							<p class="min">Esto es un párrafo</p>
+							<p class="max">Esto es un párrafo</p>
+						</div>
+					</div>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Flexbox">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult />
+					</SampleCodeResultContainer>
+					<SampleCode language="HTML">
+						<FlexboxExampleHtml />
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCode language="CSS">
+					<pre></pre>
+				</SampleCode>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Flexbox">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="flex" />
+					</SampleCodeResultContainer>
+					<SampleCode language="HTML">
+						<FlexboxExampleHtml />
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+					</SampleCodeBrackets>
+					</pre>
+				</SampleCode>
+			</SampleCodeColumns>
+			<p slot="footer">Los ítems de una caja flexible se acomodan ajustando su tamaño y/o alineación de acuerdo al espacio disponible. Por defecto la distribución es horizontal.</p>
+		</Slide>
+		<Slide title="flex-grow">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="flex" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-grow</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* Valor por defecto */</span>
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Por defecto, los ítems adoptan su tamaño "max-content".</p>
+		</Slide>
+		<Slide title="flex-grow">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="grow" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-grow</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Pero si al item se le aplica un flex-grow mayor a cero, crece para ocupar el espacio sobrante.</p>
+			<p slot="footer">El flex-grow: 1; significa que el item va a tomar una parte del espacio sobrante.</p>
+			<p slot="footer">En este ejemplo los tres items tienen flex-grow: 1; así que cada uno tomará una parte del espacio sobrante, es decir un tercio.</p>
+		</Slide>
+		<Slide title="flex-grow">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="grow-2" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span><span style="color: rgb(126, 231, 135); font-weight: 400;">:first-child</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-grow</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Si sólo un item tiene flex-grow: 1; éste tomará todo el espacio sobrante.</p>
+		</Slide>
+		<Slide title="flex-shrink">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="shrink" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-shrink</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* Valor por defecto */</span>
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Por defecto, cuando el tamaño de la caja es reducido los items se encogen.</p>
+			<p slot="footer">El tamaño mínimo que adoptan los ítem es el "min-content".</p>
+		</Slide>
+		<Slide title="flex-shrink">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="shrink-2" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-shrink</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Pero si al item se le aplica un flex-shrink: 0; no se encoge.</p>
+		</Slide>
+		<Slide title="flex-shrink">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="shrink-3" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span><span style="color: rgb(126, 231, 135); font-weight: 400;">:last-child</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-shrink</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">0</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Al igual que con flex-grow, se pueden aplicar distintos valores de flex-shrink para cada item.</p>
+			<p slot="footer">En este ejemplo el último item tiene flex-shrink: 0;.</p>
+		</Slide>
+		<Slide title="flex-basis">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="basis" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span><span style="color: rgb(126, 231, 135); font-weight: 400;">:nth-child</span>(<span style="color: rgb(121, 192, 255); font-weight: 400;">2</span>) <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-basis</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">250px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Con flex-basis se puede establecer un tamaño base diferente al tamaño que los items adoptan por defecto (content).</p>
+			<p slot="footer">En este ejemplo, el segundo item tiene un tamaño base de 250px.</p>
+		</Slide>
+		<Slide title="Combinando todo: shorthand flex">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="shorthand" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>;
+						<SampleCodeTab /><span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>*
+						<SampleCodeTab /><SampleCodeTab />flex-grow: 1;
+						<SampleCodeTab /><SampleCodeTab />flex-shrink: 1;
+						<SampleCodeTab /><SampleCodeTab />flex-basis: 0%;
+						<SampleCodeTab />*/</span>
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="flex-wrap">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="wrap" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-wrap</span>: wrap;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">La propiedad flex-wrap permite definir el comportamiento de los ítems ante un desborde de contenido.</p>
+		</Slide>
+		<Slide title="flex-wrap">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="wrap-2" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-wrap</span>: wrap;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-grow</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Con flex-wrap: wrap; cuando hay desborde los items caen debajo y generan una nueva área flexible.</p>
+		</Slide>
+		<Slide title="gap">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="gap" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">gap</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">25px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">La propiedad gap permite establecer la distancia entre item de una caja flexible</p>
+		</Slide>
+		<Slide title="flex-direction">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="direction" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-direction</span>: row-reverse;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">Con flex-direction se puede establecer la dirección en la que se van a ubicar los ítems. Por defecto se ubican orizontalmente (flex-direction: row;)</p>
+			<p slot="footer">En este ejemplo se usa flex-direction: row-reverse; para invertir la dirección de los items.</p>
+		</Slide>
+		<Slide title="flex-direction">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="direction-2" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex-direction</span>: column;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.item-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">flex</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">1</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">También se puede usar para establecer una caja flexible con disposición vertical usando flex-direction: column;</p>
+		</Slide>
+		<Slide title="Eje principal y eje cruzado">
+			<img src="/img/flex-axis.png" alt="">
+		</Slide>
+		<Slide title="justify-content">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="justify" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">justify-content</span>: space-evenly;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">La propiedad justify-content permite establecer la alineación de los items en el eje principal.</p>
+			<p slot="footer"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/justify-content</a></p>
+		</Slide>
+		<Slide title="align-items">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCodeResultContainer>
+						<FlexboxExampleResult stage="align" />
+					</SampleCodeResultContainer>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor-flex</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">display</span>: flex;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">justify-content</span>: center;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">align-items</span>: center;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+			</SampleCodeColumns>
+			<p slot="footer">La propiedad align-items permite establecer la alineación de los items en el eje cruzado.</p>
+			<p slot="footer"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/align-items" target="_blank">https://developer.mozilla.org/en-US/docs/Web/CSS/align-items</a></p>
+		</Slide>
+		<Slide title="Layout">
+			<img src="/img/pikachu-flex.jpg" alt="">
+		</Slide>
+		<Slide title="Links">
+			<p slot="footer"><a href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_flexible_box_layout/Basic_concepts_of_flexbox" target="_blank">Conceptos Básicos de flexbox</a> (MDN)</p>
+			<p slot="footer"><a href="http://www.flexboxdefense.com/" target="_blank">Flexbox Defense</a> (Juego para aprender flex)</p>
+			<p slot="footer"><a href="https://www.youtube.com/watch?v=u044iM9xsWU" target="_blank">Learn flexbox the easy way</a> (Kevin Powell)</p>
+			<p slot="footer"><a href="https://www.youtube.com/watch?v=Ns12ALe8aqI" target="_blank">How to take control of Flexbox</a> (Kevin Powell)</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

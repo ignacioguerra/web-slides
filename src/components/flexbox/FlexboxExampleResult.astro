@@ -1,0 +1,115 @@
+---
+interface Props {
+	stage?: 'flex'|'grow'|'grow-2'|'shrink'|'shrink-2'|'shrink-3'|'basis'|'shorthand'|'wrap'|'wrap-2'|'gap'|'direction'|'direction-2'|'justify'|'align';
+}
+
+const { stage = 'default' } = Astro.props;
+---
+<style>
+  .example {
+		font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+  }
+  .contenedor-flex {
+    display: flex;
+		border: 3px solid red;
+	}
+	.item-flex {
+		border: 3px solid green;
+	}
+
+	.example--default .contenedor-flex {
+		display: block;
+	}
+  .example--grow .item-flex {
+    flex-grow: 1;
+  }
+  .example--grow-2 .item-flex:first-child {
+    flex-grow: 1;
+  }
+  .example--shrink .contenedor-flex,
+  .example--shrink-2 .contenedor-flex,
+  .example--shrink-3 .contenedor-flex,
+  .example--shorthand .contenedor-flex {
+    animation: shrink 8s ease-in-out infinite alternate;
+  }
+  .example--shrink .item-flex {
+    flex-shrink: 1;
+  }
+  .example--shrink-2 .item-flex {
+    flex-shrink: 0;
+  }
+  .example--shrink-3 .item-flex:last-child {
+    flex-shrink: 0;
+  }
+  .example--basis .item-flex:nth-child(2) {
+    flex-basis: 250px;
+  }
+  .example--shorthand .item-flex {
+    flex: 1;
+    /*
+      flex-grow: 1;
+      flex-shrink: 1;
+      flex-basis: 0%;
+    */
+  }
+  .example--wrap .contenedor-flex,
+  .example--wrap-2 .contenedor-flex {
+    flex-wrap: wrap;
+    animation: wrap 8s ease-in-out infinite alternate;
+  }
+  .example--wrap-2 .item-flex {
+    flex-grow: 1;
+  }
+  .example--gap .contenedor-flex {
+    gap: 25px;
+  }
+  .example--direction .contenedor-flex {
+    flex-direction: row-reverse;
+  }
+  .example--direction-2 {
+    height: 100%;
+  }
+  .example--direction-2 .contenedor-flex {
+    flex-direction: column;
+    height: 100%;
+  }
+  .example--direction-2 .item-flex {
+    flex: 1;
+  }
+  .example--justify,
+  .example--align {
+    height: 100%;
+  }
+  .example--justify .contenedor-flex {
+    justify-content: space-evenly;
+    height: 100%;
+  }
+  .example--align .contenedor-flex {
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  @keyframes shrink {
+    0%, 20% { max-width: 100%; }
+    40%, 60% { max-width: 50%; }
+    80%, 100% { max-width: 50px; }
+  }
+  @keyframes wrap {
+    0% { max-width: 100%; }
+    100% { max-width: 40%; }
+  }
+</style>
+<div class:list={[ 'example', `example--${stage}` ]}>
+  <div class="contenedor-flex">
+    <div class="item-flex">
+      <p>Esto es un párrafo</p>
+    </div>
+    <div class="item-flex">
+      <p>Esto también pero tiene un texto más largo</p>
+    </div>
+    <div class="item-flex">
+      <p>Este es corto</p>
+    </div>
+  </div>
+</div>
