@@ -1,0 +1,250 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Neon from "../../components/Neon.astro";
+import Slider from "../../components/Slider.astro";
+import Cover from "../../components/Cover.astro";
+import Slide from "../../components/Slide.astro";
+import TheMenu from "../../components/TheMenu.astro";
+import TeamList from "../../components/TeamList.astro";
+import SampleCode from "../../components/SampleCode.astro";
+import SampleCodeTab from "../../components/SampleCodeTab.astro";
+import SampleCodeBrackets from "../../components/SampleCodeBrackets.astro";
+import SampleCodeColumns from "../../components/SampleCodeColumns.astro";
+import EmbedCodepen from "../../components/EmbedCodepen.astro";
+import SampleCodeColumn from "../../components/SampleCodeColumn.astro";
+import SampleCodeResultContainer from "../../components/SampleCodeResultContainer.astro";
+import FlexboxExampleResult from "../../components/flexbox/FlexboxExampleResult.astro";
+import FlexboxExampleHtml from "../../components/flexbox/FlexboxExampleHtml.astro";
+import PositionExampleResult from "../../components/position/PositionExampleResult.astro";
+---
+<style>
+	@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital@0;1&family=Roboto:wght@300;400;500;700&display=swap');
+
+	.columns {
+		display: flex;
+		align-items: stretch;
+		justify-content: space-evenly;
+		height: 100%;
+		width: 100%;
+		gap: 45px;
+	}
+	.columns figure {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		margin: 0;
+	}
+	.columns img {
+		flex: 1;
+		display: block;
+		width: max-content;
+		height: 100%;
+	}
+
+	.resultado--width p {
+		font-family: 'Times New Roman', Times, serif;
+    text-align: left;
+		width: auto;
+		border: 3px solid green;
+		margin: 0.5rem 0;
+	}
+	.resultado--width p.min {
+		width: min-content;
+	}
+	.resultado--width p.max {
+		width: max-content;
+	}
+
+</style>
+<Layout title="Posicionamiento">
+	<Slider>
+		<Cover title="Position" description="Posicionamiento de elementos en el documento" />
+		<Slide title="Posicionamiento">
+			<ul>
+				<li>position: static;</li>
+				<li>position: relative;</li>
+				<li>position: absolute;</li>
+				<li>position: fixed;</li>
+				<li>position: sticky;</li>
+			</ul>
+		</Slide>
+		<Slide title="Posición estática">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="HTML">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"contenedor"</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"pokemon"</span>&gt;</span>
+						<SampleCodeTab /><SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">img</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">src</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"/img/squirtle.png"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"squirtle"</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"pokemon"</span>&gt;</span>
+						<SampleCodeTab /><SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">img</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">src</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"/img/bulbasaur.png"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"bulbasaur"</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"pokemon"</span>&gt;</span>
+						<SampleCodeTab /><SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;<span style="color: rgb(126, 231, 135); font-weight: 400;">img</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">src</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"/img/charmander.png"</span> <span style="color: rgb(121, 192, 255); font-weight: 400;">class</span>=<span style="color: rgb(165, 214, 255); font-weight: 400;">"charmander"</span>&gt;</span>
+						<SampleCodeTab /><span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span>&gt;</span>
+						<span style="color: rgb(201, 209, 217); font-weight: 400;">&lt;/<span style="color: rgb(126, 231, 135); font-weight: 400;">div</span>&gt;</span></pre>
+					</SampleCode>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: static; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* valor por defecto */</span>
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: static; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* valor por defecto */</span>
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<PositionExampleResult />
+					<br>
+					<p class="small">Por defecto los elementos tienen position: static;</p>
+					<br>
+					<p class="small">Se posicionan de acuerdo al flujo normal del documento y no se puede reposicionar.</p>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Posición relativa">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: static; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* valor por defecto */</span>
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">bottom</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<PositionExampleResult stage="relative" />
+					<br>
+					<p class="small">Cuando la posición es relativa, el elemento se posicionan de acuerdo al flujo normal del documento, pero se puede reposicionar.</p>
+					<br>
+					<p class="small">Las propiedades top, bottom, left o right permiten desplazarlo respecto de su ubicación original.</p>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Posición absoluta">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative; <span style="color: rgb(139, 148, 158); font-weight: 400;"></span>
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">bottom</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.squirtle</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: absolute;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">top</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">120px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">10px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<PositionExampleResult stage="absolute" />
+					<br>
+					<p class="small">Cuando la posición es absoluta, el elemento es removido del flujo del documento, no se le reserva su espacio.</p>
+					<br>
+					<p class="small">Las propiedades top, bottom, left o right permiten posicionarlo respecto a su ancestro posicionado más cercano.</p>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Posición absoluta">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor</span> <SampleCodeBrackets>
+							<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: static; <span style="color: rgb(139, 148, 158); font-weight: 400;">/<span></span>* valor por defecto */</span>
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">bottom</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.squirtle</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: absolute;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">top</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">120px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">10px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<PositionExampleResult stage="absolute-2" />
+					<br>
+					<p class="small">Si no hay ancestros posicionados, el elemento con posición absoluta se posiciona en relación al body.</p>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Posición fija">
+			<SampleCodeColumns>
+				<SampleCodeColumn>
+					<SampleCode language="CSS">
+						<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; "><span style="color: rgb(121, 192, 255); font-weight: 400;">.contenedor</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative; <span style="color: rgb(139, 148, 158); font-weight: 400;"></span>
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: relative;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">bottom</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.squirtle</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: absolute;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">top</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">120px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">left</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">10px</span>;
+						</SampleCodeBrackets>
+						<span style="color: rgb(121, 192, 255); font-weight: 400;">.charmander</span> <SampleCodeBrackets>
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">position</span>: fixed;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">bottom</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">right</span>: <span style="color: rgb(121, 192, 255); font-weight: 400;">60px</span>;
+						</SampleCodeBrackets></pre>
+					</SampleCode>
+				</SampleCodeColumn>
+				<SampleCodeResultContainer>
+					<PositionExampleResult stage="fixed" />
+					<br>
+					<p class="small">Cuando la posición es fija, el elemento es removido del flujo del documento, no se le reserva su espacio.</p>
+					<br>
+					<p class="small">Las propiedades top, bottom, left o right permiten posicionarlo respecto al viewport.</p>
+				</SampleCodeResultContainer>
+			</SampleCodeColumns>
+		</Slide>
+		<Slide title="Posición sticky">
+			<p class="small">Cuando la posición es sticky, el elemento se posicionan de acuerdo al flujo normal del documento, pero se desplaza respecto al ancestro con scroll más cercano.</p>
+		</Slide>
+		<Slide title="z-index">
+			<PositionExampleResult stage="z-index" />
+			<p class="small"><br>Cuando se aplica posicionamiento puede ocurrir que haya superposición de elementos.</p>
+			<br>
+			<p class="small">Se puede establecer el orden de las capas con la propiedad z-index.</p>
+		</Slide>
+		<Slide title="z-index">
+			<SampleCodeColumns>
+				<SampleCode language="CSS">
+					<pre style="font-family:monospace;color: rgb(201, 209, 217); background-color: rgb(13, 17, 23); font-weight: 400; ">
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">.bulbasaur</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">z-index</span>: 2;
+					</SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">.squirtle</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">z-index</span>: 3;
+					</SampleCodeBrackets>
+					<span style="color: rgb(121, 192, 255); font-weight: 400;">.charmander</span> <SampleCodeBrackets>
+					<SampleCodeTab /><span style="color: rgb(121, 192, 255); font-weight: 400;">z-index</span>: 1;
+					</SampleCodeBrackets></pre>
+				</SampleCode>
+				<PositionExampleResult stage="z-index-2" />
+			</SampleCodeColumns>
+		</Slide>
+
+		<Slide title="Links">
+			<PositionExampleResult stage="end" />
+			<p slot="footer"><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/position" target="_blank">Position</a> (MDN)</p>
+		</Slide>
+		<Slide>
+			<p slot="footer"><a href="/">Volver al inicio</a></p>
+		</Slide>
+	</Slider>
+</Layout>

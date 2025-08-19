@@ -1,0 +1,166 @@
+---
+interface Props {
+	stage?: 'static'|'relative'|'absolute'|'absolute-2'|'fixed'|'sticky'|'z-index'|'z-index-2'|'end';
+}
+
+const { stage = 'default' } = Astro.props;
+---
+<style>
+  .contenedor {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    border: 2px solid white;
+    padding: 40px;
+  }
+
+  .pokemon {
+    background-color: #f1f1f1;
+  }
+
+  .pokemon img:hover {
+    outline: 3px solid red;
+  }
+
+  .example--static .contenedor {
+    position: static; /* valor por defecto */
+  }
+  .example--static .bulbasaur {
+    position: static; /* valor por defecto */
+  }
+
+  .example--relative .contenedor {
+    position: static; /* valor por defecto */
+  }
+  .example--relative .bulbasaur {
+    position: relative;
+    bottom: 60px;
+    left: 60px;
+  }
+
+  .example--absolute .contenedor {
+    position: relative;
+  }
+  .example--absolute .bulbasaur {
+    position: relative;
+    bottom: 60px;
+    left: 60px;
+  }
+  .example--absolute .squirtle {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+  }
+
+  .example--absolute-2 .contenedor {
+    position: static;
+  }
+  .example--absolute-2 .bulbasaur {
+    position: relative;
+    bottom: 60px;
+    left: 60px;
+  }
+  .example--absolute-2 .squirtle {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+  }
+
+  .example--fixed .contenedor {
+    position: relative;
+  }
+  .example--fixed .bulbasaur {
+    position: relative;
+    bottom: 60px;
+    left: 60px;
+  }
+  .example--fixed .squirtle {
+    position: absolute;
+    top: 120px;
+    left: 10px;
+  }
+  .example--fixed .charmander {
+    position: fixed;
+    bottom: 60px;
+    right: 60px;
+  }
+
+  .example--z-index .contenedor {
+    position: relative;
+  }
+  .example--z-index .bulbasaur {
+    position: relative;
+  }
+  .example--z-index .squirtle {
+    position: absolute;
+    left: -30px;
+  }
+  .example--z-index .charmander {
+    position: absolute;
+    right: -30px;
+  }
+
+  .example--z-index-2 .contenedor {
+    position: relative;
+  }
+  .example--z-index-2 .bulbasaur {
+    position: relative;
+    z-index: 2;
+  }
+  .example--z-index-2 .squirtle {
+    position: absolute;
+    left: -30px;
+    z-index: 3;
+  }
+  .example--z-index-2 .charmander {
+    position: absolute;
+    right: -30px;
+    z-index: 1;
+  }
+
+  .example--end .contenedor {
+    position: relative;
+  }
+  .example--end .bulbasaur {
+    position: relative;
+    animation: jump 550ms infinite;
+  }
+  .example--end .squirtle {
+    position: absolute;
+    left: -30px;
+    animation: jump 552ms infinite;
+    animation-delay: -200ms;
+  }
+  .example--end .charmander {
+    position: absolute;
+    right: -30px;
+    animation: jump 555ms infinite;
+    animation-delay: -350ms;
+  }
+  @keyframes jump {
+    0%, 20% {
+      transform: translateY(0);
+      animation-timing-function: ease-in-out;
+    }
+    70% {
+      transform: translateY(-15px);
+      animation-timing-function: ease-in;
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+</style>
+<div class:list={[ 'example', `example--${stage}` ]}>
+  <div class="contenedor">
+    <div class="pokemon">
+      <img src="/img/squirtle.png" class="squirtle">
+    </div>
+    <div class="pokemon">
+      <img src="/img/bulbasaur.png" class="bulbasaur">
+    </div>
+    <div class="pokemon">
+      <img src="/img/charmander.png" class="charmander">
+    </div>
+  </div>
+</div>
