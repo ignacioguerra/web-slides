@@ -1,0 +1,146 @@
+---
+import Layout from "../layouts/Layout.astro";
+import Slider from "../components/Slider.astro";
+import Cover from "../components/Cover.astro";
+import Slide from "../components/Slide.astro";
+
+const imageUrl =
+  "/img/net-art/net-art.jpg";
+const imageCaption =
+  '"Simple Net Art Diagram" - MTTA (1997)';
+const quote =
+  "“El Net Art es arte que utiliza la red como su medio principal, explorando las posibilidades creativas de la web.”";
+const quoteAuthor = "— Rafael Rozendaal";
+---
+
+<Layout title="Net Art | Tecnologías Hipermediales">
+  <Slider>
+    <Cover title="Net Art" />
+    <Slide title="¿Qué es Net Art?">
+      <figure style="text-align:center;">
+        <img
+          src={imageUrl}
+          alt="Ejemplo de Net Art"
+          style="max-width: 400px; border-radius: 8px;"
+        />
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          {imageCaption}
+        </figcaption>
+      </figure>
+      <blockquote
+        style="margin: 2em 0; font-style: italic; border-left: 4px solid #ccc; padding-left: 1em;"
+      >
+        {quote}
+        <br />
+        <span style="font-size: 0.9em; color: #888;">{quoteAuthor}</span>
+      </blockquote>
+    </Slide>
+
+    <Slide title="My Boyfriend Came Back From The War">
+      <figure style="text-align:center;">
+        <a href="http://www.teleportacia.org/war/" target="_blank">
+          <img
+            src="/img/net-art/war.gif"
+            alt="My Boyfriend Came Back From The War"
+            style="max-width: 600px; border-radius: 8px;"
+          />
+        </a>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          My Boyfriend Came Back From The War <span style="color:#888;"
+            >(Olia Lialina, <b>1996</b>)</span
+          >
+        </figcaption>
+      </figure>
+    </Slide>
+    <Slide title="404.jodi.org">
+      <figure style="text-align:center;">
+        <a href="http://404.jodi.org/" target="_blank">
+          <img
+            src="/img/net-art/jodi.png"
+            alt="404.jodi.org"
+            style="max-width: 600px; border-radius: 8px;"
+          />
+        </a>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          404.jodi.org <span style="color:#888;">(JODI, <b>1996</b>)</span>
+        </figcaption>
+      </figure>
+    </Slide>
+    <Slide title="RIOT">
+      <figure style="text-align:center;">
+        <a href="https://www.marknapier.com/portfolio/riot/" target="_blank">
+          <img
+            src="/img/net-art/riot.jpg"
+            alt="RIOT"
+            style="max-width: 600px; border-radius: 8px;"
+          />
+        </a>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          RIOT <span style="color:#888;">(Mark Napier, <b>1999</b>)</span>
+        </figcaption>
+      </figure>
+    </Slide>
+    <Slide title="Epithelia">
+      <figure style="text-align:center;">
+        <a href="https://marielayeregui.com/epithelia/" target="_blank">
+          <img
+            src="/img/net-art/epithelia-portada.jpg"
+            alt="Epithelia"
+            style="max-width: 600px; border-radius: 8px;"
+          />
+        </a>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          Epithelia <span style="color:#888;"
+            >(Mariela Yeregui, <b>1998-1999</b>)</span
+          >
+        </figcaption>
+      </figure>
+    </Slide>
+    <Slide title="The Intruder">
+      <div style="text-align:center;">
+        <iframe
+          src="https://player.vimeo.com/video/141229699?fl=pl&fe=sh"
+          width="600"
+          height="338"
+          allow="fullscreen; picture-in-picture"
+          allowfullscreen
+          title="The Intruder by Natalie Bookchin"></iframe>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          The Intruder <span style="color:#888;"
+            >(Natalie Bookchin, <b>1999</b>)</span
+          >
+          <br />
+          <a href="https://bookchin.net/projects/the-intruder/" target="_blank"
+            >https://bookchin.net/projects/the-intruder/</a
+          >
+        </figcaption>
+      </div>
+    </Slide>
+    <Slide title="OnKawaraUpdate">
+      <figure style="text-align:center;">
+        <a
+          href="http://www.mteww.com/update/onkawara/index.php?d=20.08.2025"
+          target="_blank"
+        >
+          <img
+            src="/img/net-art/onKawara.png"
+            alt="OnKawaraUpdate"
+            style="max-width: 600px; border-radius: 8px;"
+          />
+        </a>
+        <figcaption style="font-size: 0.9em; margin-top: 0.5em;">
+          OnKawaraUpdate <span style="color:#888;">(MTTA, <b>2001</b>)</span>
+          <br />
+          <a
+            href="http://www.mteww.com/update/onkawara/index.php?d=20.08.2025"
+            target="_blank">Obra</a
+          > &nbsp;|&nbsp;
+          <a href="https://www.mtaa.net/" target="_blank">Autor</a>
+        </figcaption>
+      </figure>
+    </Slide>
+    <Slide>
+      <p slot="footer"><a href="/">Volver al inicio</a></p>
+    </Slide>
+  </Slider>
+</Layout>
